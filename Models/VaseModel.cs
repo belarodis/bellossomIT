@@ -16,12 +16,13 @@ namespace bellossomIT.Models
         public VaseSizeEnum size { get; set; }
 
         [Required(ErrorMessage = "A quantidade é obrigatória.")]
+        [Range(1, 10000, ErrorMessage = "A quantidade deve ser um número inteiro maior que 1.")]
         [Display(Name = "Quantidade")]
-        [Range(1, 100, ErrorMessage = "A quantidade deve ser um número inteiro entre 1 e 100.")]
-        public int quantity { get; set; } = 0;
+        public int quantity { get; set; }
 
+        [Required(ErrorMessage = "O valor unitário é obrigatório.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "O valor unitário deve ser maior que zero.")]
         [Display(Name = "Valor unitário")]
-        [Range(0.01, 100, ErrorMessage = "O valor unitário deve ser maior que zero e até no máximo 100.")]
-        public double? unitPrice { get; set; } = null;
+        public double unitPrice { get; set; }
     }
 }

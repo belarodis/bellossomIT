@@ -5,25 +5,20 @@ using Microsoft.AspNetCore.Identity;
 
 namespace bellossomIT.Models
 {
-    public class FertilizerModel
+    public class FlowerModel
     {
+        [Required(ErrorMessage = "A espécie precisa ser inserida.")]
+        [StringLength(50, ErrorMessage = "A espécie não pode ter mais que 50 caracteres.")]
+        [Display(Name = "Espécie")]
+        public string specie { get; set; }
 
-        [Required(ErrorMessage = "A categoria precisa ser selecionada.")]
-        [Display(Name = "Categoria")]
-        public FertilizerCategoryEnum category { get; set; }
-
-        [Required(ErrorMessage = "A marca é obrigatória.")]
-        [Display(Name = "Marca")]
-        [StringLength(50, ErrorMessage = "A marca não pode exceder 50 caracteres.")]
-        public string brand { get; set; }
-
-        [Required(ErrorMessage = "O peso precisa ser selecionado.")]
-        [Display(Name = "Peso")]
-        public int weight { get; set; }
+        [Display(Name = "Data de chegada")]
+        [DataType(DataType.Date)]
+        public DateTime arrivalDate { get; set; } = DateTime.UtcNow;
 
         [Required(ErrorMessage = "A quantidade é obrigatória.")]
-        [Display(Name = "Quantidade")]
         [Range(1, 10000, ErrorMessage = "A quantidade deve ser um número inteiro maior que 1.")]
+        [Display(Name = "Quantidade")]
         public int quantity { get; set; }
 
         [Required(ErrorMessage = "O valor unitário é obrigatório.")]
