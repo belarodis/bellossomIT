@@ -7,14 +7,12 @@ namespace bellossomIT.Models
 {
     public class VaseModel
     {
-        [Required(ErrorMessage = "O material é obrigatório.")]
+        [Required(ErrorMessage = "O material precisa ser selecionado.")]
         [Display(Name = "Material")]
-        [Range(1, int.MaxValue, ErrorMessage = "O material precisa ser selecionado.")]
         public VaseMaterialEnum material { get; set; }
 
-        [Required(ErrorMessage = "O tamanho é obrigatório.")]
+        [Required(ErrorMessage = "O tamanho precisa ser selecionado.")]
         [Display(Name = "Tamanho")]
-        [Range(1, int.MaxValue, ErrorMessage = "O material precisa ser selecionado.")]
         public VaseSizeEnum size { get; set; }
 
         [Required(ErrorMessage = "A quantidade é obrigatória.")]

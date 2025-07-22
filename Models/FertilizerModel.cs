@@ -8,9 +8,8 @@ namespace bellossomIT.Models
     public class FertilizerModel
     {
 
-        [Required(ErrorMessage = "A categoria é obrigatória.")]
+        [Required(ErrorMessage = "A categoria precisa ser selecionada.")]
         [Display(Name = "Categoria")]
-        [Range(1, int.MaxValue, ErrorMessage = "A categoria precisa ser selecionada.")]
         public FertilizerCategoryEnum category { get; set; }
 
         [Required(ErrorMessage = "A marca é obrigatória.")]
