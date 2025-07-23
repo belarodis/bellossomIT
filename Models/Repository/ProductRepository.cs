@@ -1,3 +1,5 @@
+using bellossomIT.Models.Enuns;
+
 namespace bellossomIT.Models.Repository;
 
 public class ProductRepository : IProductRepository
@@ -14,7 +16,7 @@ public class ProductRepository : IProductRepository
                 Id = i,
                 quantity = 100 + i,
                 brand = $"Marca {i}",
-                category = FertilizerCategory.Organico,
+                category = FertilizerCategory.NATURAL,
                 weight = 5 + i
             });
         }
@@ -38,8 +40,8 @@ public class ProductRepository : IProductRepository
             {
                 Id = i,
                 quantity = 30 + i,
-                material = VaseMaterial.Ceramica,
-                size = VaseSize.Medio
+                material = VaseMaterial.CERAMIC,
+                size = VaseSize.M
             });
         }
     }
