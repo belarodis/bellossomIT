@@ -2,15 +2,16 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
+using bellossomIT.Models.Enuns;
 
 namespace bellossomIT.Models
 {
-    public class FertilizerModel
+    public class FertilizerModel: ProductModel
     {
 
         [Required(ErrorMessage = "A categoria precisa ser selecionada.")]
         [Display(Name = "Categoria")]
-        public FertilizerCategoryEnum category { get; set; }
+        public FertilizerCategory category { get; set; }
 
         [Required(ErrorMessage = "A marca é obrigatória.")]
         [Display(Name = "Marca")]
@@ -21,14 +22,5 @@ namespace bellossomIT.Models
         [Display(Name = "Peso")]
         public int weight { get; set; }
 
-        [Required(ErrorMessage = "A quantidade é obrigatória.")]
-        [Display(Name = "Quantidade")]
-        [Range(1, 10000, ErrorMessage = "A quantidade deve ser um número inteiro maior que 1.")]
-        public int quantity { get; set; }
-
-        [Required(ErrorMessage = "O valor unitário é obrigatório.")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "O valor unitário deve ser maior que zero.")]
-        [Display(Name = "Valor unitário")]
-        public double unitPrice { get; set; }
     }
 }

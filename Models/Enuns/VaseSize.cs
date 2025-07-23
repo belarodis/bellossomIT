@@ -1,7 +1,7 @@
-namespace bellossomIT.Models
+namespace bellossomIT.Models.Enuns
 {
 
-    public enum VaseSizeEnum
+    public enum VaseSize
     {
         SMALL,
         MEDIUM,
