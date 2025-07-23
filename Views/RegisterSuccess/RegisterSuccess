@@ -1,6 +1,6 @@
 @{
     ViewData["Title"] = "Cadastro Concluído";
-    var itemRemovido = "X"; 
+    var registeredItem = "X"; 
 }
 
 <div class="d-flex justify-content-center align-items-center vh-100">
@@ -9,6 +9,6 @@
             SAIR
         </button>
         <h4 class="mb-2">Cadastro realizado com sucesso!</h4>
-        <p class="mb-0 text-muted" style="font-size: 0.9rem;">O item <strong>@itemRemovido</strong> foi cadastrado no estoque.</p>
+        <p class="mb-0 text-muted" style="font-size: 0.9rem;">O item <strong>@registeredItem</strong> foi cadastrado no estoque.</p>
     </div>
 </div>
