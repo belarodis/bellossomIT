@@ -1,7 +1,4 @@
-@{
-    ViewData["Title"] = "Cadastro Concluído";
-    var registeredItem = "X"; 
-}
+@model bellossomIT.Models.ProductModel;
 
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="alert alert-success position-relative p-4 shadow-lg rounded text-center" style="min-width: 600px; padding-top: 3.5rem;">
@@ -9,6 +6,6 @@
             SAIR
         </button>
         <h4 class="mb-2">Cadastro realizado com sucesso!</h4>
-        <p class="mb-0 text-muted" style="font-size: 0.9rem;">O item <strong>@registeredItem</strong> foi cadastrado no estoque.</p>
+        <p class="mb-0 text-muted" style="font-size: 0.9rem;">O item <strong>@Model</strong> foi cadastrado no estoque.</p>
     </div>
 </div>
