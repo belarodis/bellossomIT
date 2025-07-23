@@ -1,6 +1,6 @@
-namespace DefaultNamespace;
+namespace bellossomIT.Models.Repository;
 
 public interface IProductRepository
 {
-    List<Product> GetAll(); // arrumar isso aq!
+    List<ProductModel> GetAll(); // arrumar isso aq!
 }

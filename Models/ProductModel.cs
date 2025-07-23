@@ -15,11 +15,6 @@ namespace bellossomIT.Models
         [Display(Name = "Quantidade")]
         [Range(1, 10000, ErrorMessage = "A quantidade deve ser um número inteiro maior que 1.")]
         public int quantity { get; set; }
-
-        [Required(ErrorMessage = "O valor unitário é obrigatório.")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "O valor unitário deve ser maior que zero.")]
-        [Display(Name = "Valor unitário")]
-        public double unitPrice { get; set; }
     }
 
 }

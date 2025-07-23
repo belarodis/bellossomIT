@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-
+using bellossomIT.Models.Repository;
 namespace bellossomIT.Controllers
 {
-    public class Product : Controller
+    public class ProductController : Controller
     {
         private readonly IProductRepository _productRepo;
-        public ProductsController(IProductRepository productRepo)
+        public ProductController(IProductRepository productRepo)
         {
             _productRepo = productRepo;
         }
