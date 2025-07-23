@@ -4,7 +4,7 @@ namespace bellossomIT.Models.Enuns
 
     public enum FertilizerCategory
     {
-        ORGANIC,
+        SYNTHETIC,
         NATURAL
     }
 }

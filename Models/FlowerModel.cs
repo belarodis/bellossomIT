@@ -10,7 +10,7 @@ namespace bellossomIT.Models
         [Required(ErrorMessage = "A espécie precisa ser inserida.")]
         [StringLength(50, ErrorMessage = "A espécie não pode ter mais que 50 caracteres.")]
         [Display(Name = "Espécie")]
-        public string specie { get; set; }
+        public string species { get; set; }
 
         [Display(Name = "Data de chegada")]
         [DataType(DataType.Date)]
