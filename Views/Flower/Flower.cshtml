@@ -1,0 +1,196 @@
+﻿@* @model IEnumerable<bellossomIT.Models.FlowerModel> *@
+
+@{
+    ViewData["Title"] = "Flower";
+}
+
+
+<div class="text-center flower-view">
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    ESPÉCIE
+                </th>
+                <th>
+                    DATA E HORA
+                </th>
+                <th>
+                    QUANTIDADE
+                </th>
+            </tr>
+            </thead>
+            <tbody class="table-body">
+            @{
+                List<FlowerModel> flowers = new List<FlowerModel>
+                {
+                    new FlowerModel
+                    {
+                        Id = 0,
+                        quantity = 10,
+                        unitPrice = 0,
+                        species = "Flor 1",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 1,
+                        quantity = 22,
+                        unitPrice = 0,
+                        species = "Flor 2",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 2,
+                        quantity = 13,
+                        unitPrice = 0,
+                        species = "Flor 3",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                    new FlowerModel
+                    {
+                        Id = 3,
+                        quantity = 14,
+                        unitPrice = 0,
+                        species = "Flor 4",
+                        arrivalDate = DateTime.Now
+                    },
+                };
+
+                foreach (var flower in flowers)
+                {
+                    <tr>
+                        <td>
+                            @flower.species
+                        </td>
+                        <td>
+                            @flower.arrivalDate.ToShortDateString()
+                        </td>
+                        <td>
+                            @* <form asp-action="DecreaseQuantity" method="post" style="display:inline;"> *@
+                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <button class="quantity-button" type="submit">-</button>
+                            @* </form> *@
+
+                            @flower.quantity
+
+                            @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
+                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <button class="quantity-button" type="submit">+</button>
+                            @* </form> *@
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <button class="new-flower-button">CADASTRAR NOVA FLOR</button>
+</div>
