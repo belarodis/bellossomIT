@@ -1,12 +1,12 @@
-namespace bellossomIT.Models.Repository;
+namespace bellossomIT.Service;
 
-public interface IProductRepository
+public interface IProductService
 {
     Task<List<FlowerModel>> GetAllFlowersAsync();
     Task<List<FertilizerModel>> GetAllFertilizersAsync();
     Task<List<VaseModel>> GetAllVasesAsync();
-    
+
     Task AddAsync(ProductModel product);
     Task UpdateAsync(ProductModel product);
-    Task DeleteAsync(ProductModel product);
+    Task RemoveAsync(ProductModel product);
 }
