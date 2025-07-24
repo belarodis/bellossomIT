@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    height: 100vh;
-    background: linear-gradient(0deg,rgba(208, 244, 186, 1) 25%, rgba(234, 248, 218, 1) 100%);
+    height: 100%;
+    background: linear-gradient(180deg,#FFF4CF 50%, #FFECAC 100%);
 }
 
 @media (min-width: 768px) {
@@ -15,8 +15,8 @@ body {
 
 
 .logo {
-    margin: 4em;
-    width: 8em;
+    margin: 2em;
+    width: 10em;
     aspect-ratio: 1/1;
 
 }
@@ -26,17 +26,27 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
+    margin-bottom: 2em;
 }
 
-.button-container button {
+.product-category {
+    color: #AF9757 !important; 
+    text-decoration: none;
+    transition: background-color 1s ease;
+}
+
+.product-category:hover {
+    background-color: #FFECAC;
+}
+
+.button-container a {
     font-weight: bold;
     font-size: 1.5em;
     border-radius: 50px;
-    background-color: transparent;
+    background-color: #EDD37B;
+    color: #AF9757;
     padding: .5em 1em;
-    border: 4px solid green;
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.5);
-
+    border: 4px solid #AF9757;
 }
 
 .quantity-button {
@@ -48,10 +58,10 @@ body {
 }
 
 .table-wrapper {
-  max-height: 24rem; /* ou ajuste conforme necessário para ~6 linhas */
+  max-height: 24rem; 
   overflow-y: auto;
   display: block;
-  scrollbar-color: #4B6D4E #88A172 ;
+  scrollbar-color: #4B6D4E transparent ;
 }
 
 .bellossom-table th {
@@ -80,7 +90,7 @@ body {
 }
 
 .bellossom-table td {
-  padding: 12px;
+  padding: 4px 0;
   box-shadow: 1px 1px 1px #4B6D4E;
 }
 
