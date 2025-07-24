@@ -1,0 +1,70 @@
+﻿@model IEnumerable<bellossomIT.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Fertilizer";
+}
+
+<div class="text-center flower-view">
+    <div class="table-wrapper">
+        <table class="bellossom-table">
+            <thead>
+            <tr>
+                <th>
+                    <span>
+                        TIPO
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        MARCA
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        PESO
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        QUANTIDADE
+                    </span>
+                </th>
+            </tr>
+            </thead>
+            <tbody class="table-body">
+            @{
+
+                foreach (FertilizerModel fertilizer in ViewBag.products)
+                {
+                    <tr>
+                        <td>
+                            @fertilizer.category
+                        </td>
+                        <td>
+                            @fertilizer.brand
+                        </td>
+                        <td>
+                            @fertilizer.weight g
+                        </td>
+                        <td>
+                            @* <form asp-action="DecreaseQuantity" method="post" style="display:inline;"> *@
+                            <input type="hidden" name="id" value="@fertilizer.Id"/>
+                            <button class="quantity-button" type="submit">-</button>
+                            @* </form> *@
+
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@fertilizer.quantity"/>
+
+                            @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
+                            <input type="hidden" name="id" value="@fertilizer.Id"/>
+                            <button class="quantity-button" type="submit">+</button>
+                            @* </form> *@
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <button class="new-product-button">CADASTRAR NOVO FERTILIZANTE</button>
+</div>

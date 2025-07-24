@@ -115,6 +115,7 @@ body {
 }
 
 .quantity-input {
+    width: 5em;
     text-align: center;
     color: #4B6D4E;
     border: none;

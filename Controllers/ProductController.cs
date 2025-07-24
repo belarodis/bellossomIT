@@ -4,10 +4,10 @@ namespace bellossomIT.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly IProductRepository _productRepo;
-        public ProductController(IProductRepository productRepo)
+        private readonly IProductRepository _repository;
+        public ProductController(IProductRepository repository)
         {
-            _productRepo = productRepo;
+            _repository = repository;
         }
         // GET: Product
         public ActionResult Index()
@@ -17,21 +17,27 @@ namespace bellossomIT.Controllers
             return View();
         }
 
-        public ActionResult Flower(string category)
+        public async Task<IActionResult> Flower(string category)
         {
             //pegar os produtos dessa categoria
+            var flowers = await _repository.GetAllFlowersAsync();
+            ViewBag.products = flowers;
             return View(category);
         }
         
-        public ActionResult Fertilizer(string category)
+        public async Task<IActionResult> Fertilizer(string category)
         {
             //pegar os produtos dessa categoria
+            var fertilizers = await _repository.GetAllFertilizersAsync();
+            ViewBag.products = fertilizers;
             return View(category);
         }
         
-        public ActionResult Vase(string category)
+        public async Task<IActionResult> Vase(string category)
         {
             //pegar os produtos dessa categoria, vamos usar ViewData
+            var vases = await _repository.GetAllVasesAsync();
+            ViewBag.products = vases;
             return View(category);
         }
     }
