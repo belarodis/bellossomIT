@@ -1,9 +1,8 @@
-﻿@* @model IEnumerable<bellossomIT.Models.FlowerModel> *@
+﻿@model IEnumerable<bellossomIT.Models.ProductModel>
 
 @{
     ViewData["Title"] = "Flower";
 }
-
 
 <div class="text-center flower-view">
     <div class="table-wrapper">
@@ -29,130 +28,8 @@
             </thead>
             <tbody class="table-body">
             @{
-                List<FlowerModel> flowers = new List<FlowerModel>
-                {
-                    new FlowerModel
-                    {
-                        Id = 0,
-                        quantity = 10,
-                        species = "Flor 1",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 1,
-                        quantity = 22,
-                        species = "Flor 2",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 2,
-                        quantity = 13,
-                        species = "Flor 3",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                    new FlowerModel
-                    {
-                        Id = 3,
-                        quantity = 14,
-                        species = "Flor 4",
-                        arrivalDate = DateTime.Now
-                    },
-                };
 
-                foreach (var flower in flowers)
+                foreach (var flower in ViewBag.products)
                 {
                     <tr>
                         <td>
@@ -167,7 +44,7 @@
                             <button class="quantity-button" type="submit">-</button>
                             @* </form> *@
 
-                            @flower.quantity
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@flower.quantity"/>
 
                             @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
                             <input type="hidden" name="id" value="@flower.Id"/>

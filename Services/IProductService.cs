@@ -1,3 +1,5 @@
+using bellossomIT.Models;
+
 namespace bellossomIT.Service;
 
 public interface IProductService
