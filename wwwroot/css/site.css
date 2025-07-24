@@ -33,6 +33,7 @@ body {
   max-height: 24rem; /* ou ajuste conforme necessário para ~6 linhas */
   overflow-y: auto;
   display: block;
+  scrollbar-color: #4B6D4E #88A172 ;
 }
 
 .bellossom-table th {
