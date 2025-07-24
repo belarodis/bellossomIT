@@ -1,7 +1,7 @@
-﻿@model IEnumerable<bellossomIT.Models.ProductModel>
+@model IEnumerable<bellossomIT.Models.ProductModel>
 
 @{
-    ViewData["Title"] = "Flower";
+    ViewData["Title"] = "Vase";
 }
 
 <div class="text-center product-view">
@@ -11,12 +11,12 @@
             <tr>
                 <th>
                     <span>
-                        ESPÉCIE
+                        MATERIAL
                     </span>
                 </th>
                 <th>
                     <span>
-                        DATA E HORA
+                        TAMANHO
                     </span>
                 </th>
                 <th>
@@ -29,25 +29,25 @@
             <tbody class="table-body">
             @{
 
-                foreach (var flower in ViewBag.products)
+                foreach (var vase in ViewBag.products)
                 {
                     <tr>
                         <td>
-                            @flower.species
+                            @vase.material
                         </td>
                         <td>
-                            @flower.arrivalDate
+                            @vase.size
                         </td>
                         <td>
                             @* <form asp-action="DecreaseQuantity" method="post" style="display:inline;"> *@
-                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <input type="hidden" name="id" value="@vase.Id"/>
                             <button class="quantity-button" type="submit">-</button>
                             @* </form> *@
 
-                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@flower.quantity"/>
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@vase.quantity"/>
 
                             @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
-                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <input type="hidden" name="id" value="@vase.Id"/>
                             <button class="quantity-button" type="submit">+</button>
                             @* </form> *@
                         </td>
@@ -57,6 +57,5 @@
             </tbody>
         </table>
     </div>
-
-    <button class="new-product-button">CADASTRAR NOVA FLOR</button>
 </div>
+
