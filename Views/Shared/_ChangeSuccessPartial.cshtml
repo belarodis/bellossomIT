@@ -1,11 +1,11 @@
 @model bellossomIT.Models.ProductModel;
 
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="alert alert-success position-relative p-4 shadow-lg rounded text-center" style="min-width: 600px; padding-top: 3.5rem;">
-        <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-3" onclick="window.location.href='@Url.Action("Index", "Home")'">
-            SAIR
+<div class="d-flex justify-content-center align-items-center vh-100" style="background: rgba(235,248,218,0.9);">
+    <div class="custom-modal-box position-relative text-center">
+        <button class="botao-cancelar-vermelho position-absolute top-0 end-0 m-3" onclick="window.location.href='@Url.Action("Index", "Product")'">
+            CANCELAR
         </button>
-        <h4 class="mb-2">Alteração realizada com sucesso!</h4>
-        <p class="mb-0 text-muted" style="font-size: 0.9rem;">O item <strong>@Model</strong> foi alterado no estoque.</p>
+        <h4 class="mb-2 mt-4">Alteração realizada com sucesso!</h4>
+        <p class="mb-0 text-muted" style="font-size: 1.1rem;">O item <strong>@Model</strong> foi alterado no estoque.</p>
     </div>
 </div>

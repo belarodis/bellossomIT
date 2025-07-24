@@ -58,3 +58,33 @@ body {
 .main-page-text {
     margin: 4em 0;
 }
+
+.custom-modal-box {
+    min-width: 800px;
+    background: #c1d4ae;             
+    border: 4px solid #65866c;      /
+    border-radius: 32px;          
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+.botao-cancelar-vermelho {
+    background: transparent;
+    color: #c46d5e;
+    border: 4px solid #c46d5e;
+    border-radius: 32px;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 0.1em 1em;
+    box-shadow: none;
+    outline: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.botao-cancelar-vermelho:hover {
+    background: #f7efd9;
+    color: #a44a39;
+    border-color: #a44a39;
+    cursor: pointer;
+}
