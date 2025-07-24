@@ -94,7 +94,7 @@ body {
   box-shadow: 1px 1px 1px #4B6D4E;
 }
 
-.new-flower-button {
+.new-product-button {
   font-size: 32px;
   font-weight: bold;
   color: #AF9757;
@@ -106,7 +106,7 @@ body {
   transition: background-color 1s ease;
 }
 
-.new-flower-button:hover {
+.new-product-button:hover {
   background-color: #FFECAC;
 }
 
@@ -115,6 +115,7 @@ body {
 }
 
 .quantity-input {
+    width: 5em;
     text-align: center;
     color: #4B6D4E;
     border: none;

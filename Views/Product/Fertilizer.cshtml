@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<bellossomIT.Models.ProductModel>
 
 @{
-    ViewData["Title"] = "Flower";
+    ViewData["Title"] = "Fertilizer";
 }
 
 <div class="text-center flower-view">
@@ -11,12 +11,17 @@
             <tr>
                 <th>
                     <span>
-                        ESPÉCIE
+                        TIPO
                     </span>
                 </th>
                 <th>
                     <span>
-                        DATA E HORA
+                        MARCA
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        PESO
                     </span>
                 </th>
                 <th>
@@ -29,25 +34,28 @@
             <tbody class="table-body">
             @{
 
-                foreach (var flower in ViewBag.products)
+                foreach (FertilizerModel fertilizer in ViewBag.products)
                 {
                     <tr>
                         <td>
-                            @flower.species
+                            @fertilizer.category
                         </td>
                         <td>
-                            @flower.arrivalDate
+                            @fertilizer.brand
+                        </td>
+                        <td>
+                            @fertilizer.weight g
                         </td>
                         <td>
                             @* <form asp-action="DecreaseQuantity" method="post" style="display:inline;"> *@
-                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <input type="hidden" name="id" value="@fertilizer.Id"/>
                             <button class="quantity-button" type="submit">-</button>
                             @* </form> *@
 
-                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@flower.quantity"/>
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@fertilizer.quantity"/>
 
                             @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
-                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <input type="hidden" name="id" value="@fertilizer.Id"/>
                             <button class="quantity-button" type="submit">+</button>
                             @* </form> *@
                         </td>
@@ -58,5 +66,5 @@
         </table>
     </div>
 
-    <button class="new-product-button">CADASTRAR NOVA FLOR</button>
+    <button class="new-product-button">CADASTRAR NOVO FERTILIZANTE</button>
 </div>

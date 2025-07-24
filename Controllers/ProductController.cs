@@ -5,7 +5,7 @@ namespace bellossomIT.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepository _repository;
-        public ProductController(IProductRepository productRepo)
+        public ProductController(IProductRepository repository)
         {
             _repository = repository;
         }
@@ -20,7 +20,7 @@ namespace bellossomIT.Controllers
         public async Task<IActionResult> Flower(string category)
         {
             //pegar os produtos dessa categoria
-            var flowers = await _repository.GetAllFlowerAsync();
+            var flowers = await _repository.GetAllFlowersAsync();
             ViewBag.products = flowers;
             return View(category);
         }
