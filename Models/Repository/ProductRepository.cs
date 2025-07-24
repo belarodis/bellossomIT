@@ -82,6 +82,11 @@ public class ProductRepository : IProductRepository
         return Task.CompletedTask;
     }
 
+    public Task DeleteAsync(ProductModel product)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task DeleteAsync(int id)
     {
         var product = _products.FirstOrDefault(p => p.Id == id);

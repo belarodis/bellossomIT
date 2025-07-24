@@ -1,6 +1,7 @@
+using bellossomIT.Models.Repository;
+
 namespace bellossomIT.Services;
 using bellossomIT.Models;
-using bellossomIT.Repository;
 
 public class ProductService
 {

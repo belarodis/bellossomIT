@@ -1,0 +1,62 @@
+﻿@model IEnumerable<bellossomIT.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Flower";
+}
+
+<div class="text-center flower-view">
+    <div class="table-wrapper">
+        <table class="bellossom-table">
+            <thead>
+            <tr>
+                <th>
+                    <span>
+                        ESPÉCIE
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        DATA E HORA
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        QUANTIDADE
+                    </span>
+                </th>
+            </tr>
+            </thead>
+            <tbody class="table-body">
+            @{
+
+                foreach (var flower in ViewBag.products)
+                {
+                    <tr>
+                        <td>
+                            @flower.species
+                        </td>
+                        <td>
+                            @flower.arrivalDate
+                        </td>
+                        <td>
+                            @* <form asp-action="DecreaseQuantity" method="post" style="display:inline;"> *@
+                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <button class="quantity-button" type="submit">-</button>
+                            @* </form> *@
+
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@flower.quantity"/>
+
+                            @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
+                            <input type="hidden" name="id" value="@flower.Id"/>
+                            <button class="quantity-button" type="submit">+</button>
+                            @* </form> *@
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <button class="new-flower-button">CADASTRAR NOVA FLOR</button>
+</div>
