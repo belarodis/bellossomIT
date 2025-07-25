@@ -12,7 +12,7 @@ namespace bellossomIT.Models
         public int Id { get; set; }
         
         [Required(ErrorMessage = "A quantidade é obrigatória.")]
-        [Display(Name = "Quantidade")]
+        [Display(Name = "QUANTIDADE")]
         [Range(1, 10000, ErrorMessage = "A quantidade deve ser um número inteiro maior que 1.")]
         public int quantity { get; set; }
     }

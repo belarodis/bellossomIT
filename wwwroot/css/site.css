@@ -125,6 +125,33 @@ body {
 
 .quantity-input:focus {
     color: black;
-    background-color: white;
-    
+    background-color: white;    
+}
+
+.formulary-container {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    border: 1px solid #AF9757;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-flower-input {
+    width: 24rem;
+    height: 3em;
+    background-color: #9EB985;
+    border: 3px solid #4B6D4E;
+    border-radius: 45px;
+    margin-bottom: 2em;
+}
+
+.add-flower-label {
+    font-size: 1.5em;
+    color: #4B6D4E;
+    align-self: center;
 }

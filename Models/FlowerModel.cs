@@ -9,10 +9,10 @@ namespace bellossomIT.Models
     {
         [Required(ErrorMessage = "A espécie precisa ser inserida.")]
         [StringLength(50, ErrorMessage = "A espécie não pode ter mais que 50 caracteres.")]
-        [Display(Name = "Espécie")]
+        [Display(Name = "ESPÉCIE")]
         public string species { get; set; }
 
-        [Display(Name = "Data de chegada")]
+        [Display(Name = "DATA E HORA")]
         [DataType(DataType.Date)]
         public DateTime arrivalDate { get; set; } = DateTime.UtcNow;
 
