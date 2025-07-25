@@ -1,0 +1,32 @@
+﻿@model bellossomIT.Models.FlowerModel
+
+<div class="formulary-container">
+    <form asp-controller="Product" asp-action="AddFlower" method="post">
+        <div class="field-container">
+
+            <div class="input-container">
+                <label class="add-flower-label" asp-for="@Model.species"></label>
+                <input placeholder="DIGITE O NOME DA ESPÉCIE" class="form-control add-flower-input"
+                       asp-for="@Model.species" required/>
+                <span asp-validation-for="@Model.species"/>
+            </div>
+            <div class="input-container">
+                <label class="add-flower-label" asp-for="@Model.arrivalDate"></label>
+                <input type="datetime-local" class="form-control add-flower-input" asp-for="@Model.arrivalDate"
+                       required/>
+                <span asp-validation-for="@Model.arrivalDate"/>
+            </div>
+            <div class="input-container">
+                <label class="add-flower-label" asp-for="@Model.quantity"></label>
+                <input placeholder="DIGITE A QUANTIDADE" oninput="this.value = this.value.replace(/[^0-9]+/g, '')"
+                       class="form-control add-flower-input" asp-for="@Model.quantity" required/>
+                <span asp-validation-for="@Model.quantity"/>
+            </div>
+            <button type="submit" class="new-product-button">CADASTRAR NOVA FLOR</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

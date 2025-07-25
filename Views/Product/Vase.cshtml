@@ -1,0 +1,77 @@
+@model IEnumerable<bellossomIT.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Vase";
+}
+
+<div class="text-center product-view">
+    <div class="table-wrapper" id="table-container" style="overflow-y: scroll;">
+        <table class="bellossom-table">
+            <thead>
+            <tr>
+                <th>
+                    <span>
+                        MATERIAL
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        TAMANHO
+                    </span>
+                </th>
+                <th>
+                    <span>
+                        QUANTIDADE
+                    </span>
+                </th>
+            </tr>
+            </thead>
+            <tbody class="table-body">
+            @{
+
+                foreach (var vase in ViewBag.products)
+                {
+                    <tr>
+                        <td>
+                            @vase.material
+                        </td>
+                        <td>
+                            @vase.size
+                        </td>
+                        <td>
+                            <form asp-action="DecreaseQuantity" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@vase.Id"/>
+                                <button class="quantity-button" type="submit">-</button>
+                            </form>
+
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@vase.quantity"/>
+
+                            <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@vase.Id"/>
+                                <button class="quantity-button" type="submit">+</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    window.addEventListener("load", function () {
+        const scrollPosition = localStorage.getItem("scrollPosition");
+        if (scrollPosition !== null) {
+            window.scrollTo(0, parseInt(scrollPosition));
+            localStorage.removeItem("scrollPosition");
+        }
+
+        const table = document.getElementById("table-container");
+        const tableScroll = localStorage.getItem("tableScroll");
+        if (table && tableScroll !== null) {
+            table.scrollTop = parseInt(tableScroll);
+            localStorage.removeItem("tableScroll");
+        }
+    });
+</script>
