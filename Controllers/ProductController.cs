@@ -1,3 +1,4 @@
+using bellossomIT.Models;
 using Microsoft.AspNetCore.Mvc;
 using bellossomIT.Services;
 namespace bellossomIT.Controllers
@@ -20,6 +21,20 @@ namespace bellossomIT.Controllers
             var flowers = await _service.GetAllFlowersAsync();
             ViewBag.products = flowers;
             return View(category);
+        }
+        [HttpGet]
+        public IActionResult AddFlower()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> AddFlower(FlowerModel flower)
+        {
+
+            Console.WriteLine($"Id: {flower.Id}, ArrivalDate: {flower.arrivalDate}, Species: {flower.species}, Quantity: {flower.quantity}");
+            await _service.AddAsync(flower);
+            return RedirectToAction("Flower");
         }
         
         public async Task<IActionResult> Fertilizer(string category)

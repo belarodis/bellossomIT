@@ -44,7 +44,7 @@
                                 <button class="quantity-button" type="submit">-</button>
                             </form>
 
-                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@flower.quantity"/>
+                            <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^0-9]+/g, '')" value="@flower.quantity"/>
 
                             <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;">
                                 <input type="hidden" name="id" value="@flower.Id"/>
@@ -58,7 +58,7 @@
         </table>
     </div>
 
-    <button class="new-product-button">CADASTRAR NOVA FLOR</button>
+    <button class="new-product-button"><a href="@Url.Action("AddFlower", "Product")">CADASTRAR NOVA FLOR</a></button>
 </div>
 
 <script>
