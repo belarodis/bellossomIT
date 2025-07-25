@@ -11,4 +11,6 @@ public interface IProductService
     Task AddAsync(ProductModel product);
     Task UpdateAsync(ProductModel product);
     Task RemoveAsync(ProductModel product);
+    Task IncreaseQuantity(int id);
+    Task DecreaseQuantity(int id);
 }

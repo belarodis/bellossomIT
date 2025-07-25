@@ -9,4 +9,6 @@ public interface IProductRepository
     Task AddAsync(ProductModel product);
     Task UpdateAsync(ProductModel product);
     Task DeleteAsync(ProductModel product);
+    Task IncreaseQuantity(int id);
+    Task DecreaseQuantity(int id);
 }

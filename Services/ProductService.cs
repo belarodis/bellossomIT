@@ -50,4 +50,14 @@ public class ProductService
 
         await _repository.DeleteAsync(product);
     }
+    
+    public async Task IncreaseQuantity(int id)
+    {
+        await _repository.IncreaseQuantity(id);
+    }
+
+    public async Task DecreaseQuantity(int id)
+    {
+        await _repository.DecreaseQuantity(id);
+    }
 }
