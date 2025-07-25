@@ -5,7 +5,7 @@
 }
 
 <div class="text-center product-view">
-    <div class="table-wrapper">
+    <div class="table-wrapper" id="table-container" style="overflow-y: scroll;">
         <table class="bellossom-table">
             <thead>
             <tr>
@@ -60,3 +60,20 @@
 
     <button class="new-product-button"><a href="@Url.Action("AddFlower", "Product")">CADASTRAR NOVA FLOR</a></button>
 </div>
+
+<script>
+    window.addEventListener("load", function () {
+        const scrollPosition = localStorage.getItem("scrollPosition");
+        if (scrollPosition !== null) {
+            window.scrollTo(0, parseInt(scrollPosition));
+            localStorage.removeItem("scrollPosition");
+        }
+
+        const table = document.getElementById("table-container");
+        const tableScroll = localStorage.getItem("tableScroll");
+        if (table && tableScroll !== null) {
+            table.scrollTop = parseInt(tableScroll);
+            localStorage.removeItem("tableScroll");
+        }
+    });
+</script>
