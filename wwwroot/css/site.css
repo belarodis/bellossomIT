@@ -28,7 +28,7 @@ body {
 }
 
 .product-category {
-    color: #AF9757 !important; 
+    color: #AF9757 !important;
     text-decoration: none;
     transition: background-color 1s ease;
 }
@@ -48,74 +48,74 @@ body {
 }
 
 .quantity-button {
-  padding: 0 1em;
-  border: none;
-  font-weight: bold;
-  color: #4B6D4E;
-  background-color: transparent;
+    padding: 0 1em;
+    border: none;
+    font-weight: bold;
+    color: #4B6D4E;
+    background-color: transparent;
 }
 
 .table-wrapper {
-  max-height: 24rem; 
-  overflow-y: auto;
-  display: block;
-  scrollbar-color: #4B6D4E transparent ;
+    max-height: 24rem;
+    overflow-y: auto;
+    display: block;
+    scrollbar-color: #4B6D4E transparent;
 }
 
 .bellossom-table th {
-  position: sticky;
-  top: 0;
-  background-color: #4B6D4E;
-  padding: 1px 0 1px 1px;
+    position: sticky;
+    top: 0;
+    background-color: #4B6D4E;
+    padding: 1px 0 1px 1px;
 }
 
 .bellossom-table th:last-child {
-  padding-right: 1px;
+    padding-right: 1px;
 }
 
 .bellossom-table th span {
-  background-color: #88A172;
-  display: block;
-  width: 100%;
+    background-color: #88A172;
+    display: block;
+    width: 100%;
 }
 
 .bellossom-table {
-  width: 100%;
-  background-color: #9EB985;
-  color: #4B6D4E;
-  font-weight: bold;
-  font-size: 24px;
+    width: 100%;
+    background-color: #9EB985;
+    color: #4B6D4E;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .bellossom-table td {
-  padding: 4px 0;
-  box-shadow: 1px 1px 1px #4B6D4E;
+    padding: 4px 0;
+    box-shadow: 1px 1px 1px #4B6D4E;
 }
 
 .new-product-button {
-  font-size: 24px;
-  font-weight: bold;
-  color: #AF9757;
-  padding: .75em;
-  margin: 1em;
-  background-color: #EDD37B;  
-  border: 4px solid #AF9757;
-  border-radius: 45px;
-  transition: background-color 1s ease;
+    font-size: 24px;
+    font-weight: bold;
+    color: #AF9757;
+    padding: .75em;
+    margin: 1em;
+    background-color: #EDD37B;
+    border: 4px solid #AF9757;
+    border-radius: 45px;
+    justify-self: center;
+    transition: background-color 1s ease;
 }
 
 .new-product-button a {
     text-decoration: none;
     color: #AF9757;
-    
 }
 
 .new-product-button:hover {
-  background-color: #FFECAC;
+    background-color: #FFECAC;
 }
 
 .product-view {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .quantity-input {
@@ -124,18 +124,19 @@ body {
     color: #4B6D4E;
     border: none;
     background-color: transparent;
-    
+
 }
 
 .quantity-input:focus {
     color: black;
-    background-color: white;    
+    background-color: white;
 }
 
 .formulary-container {
     display: flex;
-    max-width: 100%;
+    width: 100%;
     justify-content: center;
+    align-content: center;
 }
 
 .input-container {
@@ -159,3 +160,47 @@ body {
     color: #4B6D4E;
     align-self: center;
 }
+
+.weight-input {
+    display: flex;
+    justify-items: center;
+}
+
+.category-input {
+    display: flex;
+    justify-items: center;
+}
+.label-teste {
+    border: 2px solid #4B6D4E;
+    background-color: #9EB985;
+    border-radius: 45px;
+    color: #4B6D4E;
+    padding: .5em;
+    margin: 0 0 .5em .5em;
+}
+
+.radio-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="radio"] {
+    display: none;
+    
+}
+input[type="radio"]:checked + label {
+    background-color: #EA9669;
+    border-color: #C14F42;
+    color: #C14F42;
+}
+

@@ -1,0 +1,56 @@
+﻿@model bellossomIT.Models.FertilizerModel
+
+<div class="formulary-container">
+    <form asp-controller="Product" asp-action="AddFertilizer" method="post">
+        <div class="radio-container">
+
+            <div class="input-container category-input">
+                <label class="add-flower-label">CATEGORIA</label>
+                <div>
+                    <input type="radio" id="synthetic" name="category" value="Synthetic" required/>
+                    <label class="label-teste" for="synthetic">SINTÉTICO</label>
+                </div>
+                <div>
+                    <input type="radio" id="natural" name="category" value="Natural" required/>
+                    <label class="label-teste" for="natural">NATURAL</label>
+                </div>
+                <span asp-validation-for="@Model.category"></span>
+            </div>
+
+            <div class="input-container weight-input">
+                <label class="add-flower-label">PESO</label>
+                <div>
+                    <input type="radio" id="weight500" name="weight" value="500" required/>
+                    <label class="label-teste" for="weight500">500g</label>
+                </div>
+                <div>
+                    <input type="radio" id="weight1000" name="weight" value="1000" required/>
+                    <label class="label-teste" for="weight1000">1000g</label>
+                </div>
+                <span asp-validation-for="@Model.weight"></span>
+            </div>
+
+        </div>
+
+        <div class="field-container">
+
+            <div class="input-container">
+                <label class="add-flower-label" asp-for="@Model.brand"></label>
+                <input placeholder="DIGITE A MARCA" class="form-control add-flower-input" asp-for="@Model.brand" required/>
+                <span asp-validation-for="@Model.brand"/>
+            </div>
+
+            <div class="input-container">
+                <label class="add-flower-label" asp-for="@Model.quantity"></label>
+                <input placeholder="DIGITE A QUANTIDADE" oninput="this.value = this.value.replace(/[^0-9]+/g, '')"
+                       class="form-control add-flower-input" asp-for="@Model.quantity" required/>
+                <span asp-validation-for="@Model.quantity"/>
+            </div>
+                <button type="submit" class="new-product-button">CADASTRAR NOVO FERTILIZANTE</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
