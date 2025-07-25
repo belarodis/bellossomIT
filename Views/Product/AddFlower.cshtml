@@ -9,7 +9,7 @@
         </div>
         <div class="input-container">
             <label class="add-flower-label" asp-for="@Model.arrivalDate"></label>
-            <input class="form-control add-flower-input" asp-for="@Model.arrivalDate" required/>
+            <input type="datetime-local" class="form-control add-flower-input" asp-for="@Model.arrivalDate" required/>
             <span asp-validation-for="@Model.arrivalDate"/>
         </div>
         <div class="input-container">
@@ -17,7 +17,7 @@
             <input placeholder="DIGITE A QUANTIDADE" oninput="this.value = this.value.replace(/[^0-9]+/g, '')" class="form-control add-flower-input" asp-for="@Model.quantity" required/>
             <span asp-validation-for="@Model.quantity"/>
         </div>
-        <button type="submit" class="new-product-button">Adicionar</button>
+        <button type="submit" class="new-product-button">CADASTRAR NOVA FLOR</button>
     </form>
 </div>
 
