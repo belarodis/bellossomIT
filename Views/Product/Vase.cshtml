@@ -39,17 +39,17 @@
                             @vase.size
                         </td>
                         <td>
-                            @* <form asp-action="DecreaseQuantity" method="post" style="display:inline;"> *@
-                            <input type="hidden" name="id" value="@vase.Id"/>
-                            <button class="quantity-button" type="submit">-</button>
-                            @* </form> *@
+                            <form asp-action="DecreaseQuantity" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@vase.Id"/>
+                                <button class="quantity-button" type="submit">-</button>
+                            </form>
 
                             <input class="quantity-input" type="text" onchange="validateEmptyInput(this)" oninput="this.value = this.value.replace(/[^1-9][^0-9]*/g, '')" value="@vase.quantity"/>
 
-                            @* <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;"> *@
-                            <input type="hidden" name="id" value="@vase.Id"/>
-                            <button class="quantity-button" type="submit">+</button>
-                            @* </form> *@
+                            <form class="quantity-button" asp-action="IncreaseQuantity" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@vase.Id"/>
+                                <button class="quantity-button" type="submit">+</button>
+                            </form>
                         </td>
                     </tr>
                 }

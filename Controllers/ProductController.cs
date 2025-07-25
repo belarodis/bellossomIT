@@ -1,44 +1,72 @@
 using Microsoft.AspNetCore.Mvc;
-using bellossomIT.Models.Repository;
+using bellossomIT.Services;
 namespace bellossomIT.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly IProductRepository _repository;
-        public ProductController(IProductRepository repository)
+        private readonly ProductService _service;
+        public ProductController(ProductService service)
         {
-            _repository = repository;
+            _service = service;
         }
-        // GET: Product
+        
         public ActionResult Index()
         {
-            //var products(p/ abaixo, mudar o nome da variavel p um codigo mais legível) = _productRepo.GetAll(ou get by category)(); fazer dps um get by category, manda o tipo e recebe só a de certo tipo
-            //return View(products);
             return View();
         }
 
         public async Task<IActionResult> Flower(string category)
         {
-            //pegar os produtos dessa categoria
-            var flowers = await _repository.GetAllFlowersAsync();
+            var flowers = await _service.GetAllFlowersAsync();
             ViewBag.products = flowers;
             return View(category);
         }
         
         public async Task<IActionResult> Fertilizer(string category)
         {
-            //pegar os produtos dessa categoria
-            var fertilizers = await _repository.GetAllFertilizersAsync();
+            var fertilizers = await _service.GetAllFertilizersAsync();
             ViewBag.products = fertilizers;
             return View(category);
         }
         
         public async Task<IActionResult> Vase(string category)
         {
-            //pegar os produtos dessa categoria, vamos usar ViewData
-            var vases = await _repository.GetAllVasesAsync();
+            var vases = await _service.GetAllVasesAsync();
             ViewBag.products = vases;
             return View(category);
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> IncreaseQuantity(int id)
+        {
+            await _service.IncreaseQuantity(id); // 
+            
+            return RedirectToAction(GetReturnAction());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DecreaseQuantity(int id)
+        {
+            await _service.DecreaseQuantity(id); //
+            
+            return RedirectToAction(GetReturnAction());
+        }
+
+        private string GetReturnAction()
+        {
+            var referer = Request.Headers["Referer"].ToString();
+
+            if (referer.Contains("/Fertilizer"))
+                return "Fertilizer";
+
+            if (referer.Contains("/Flower"))
+                return "Flower";
+
+            if (referer.Contains("/Vase"))
+                return "Vase";
+
+            return "Index";
+        }
+
     }
 }   

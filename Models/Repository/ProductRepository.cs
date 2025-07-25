@@ -84,15 +84,34 @@ public class ProductRepository : IProductRepository
 
     public Task DeleteAsync(ProductModel product)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteAsync(int id)
-    {
-        var product = _products.FirstOrDefault(p => p.Id == id);
         if (product != null)
         {
-            _products.Remove(product);
+            var existing = _products.FirstOrDefault(p => p.Id == product.Id);
+            if (existing != null)
+            {
+                _products.Remove(existing);
+            }
+        }
+        return Task.CompletedTask;
+    }
+
+
+    public Task DecreaseQuantity(int id)
+    {
+        var product = _products.FirstOrDefault(p => p.Id == id);
+        if (product != null && product.quantity > 0)
+        {
+            product.quantity--;
+        }
+        return Task.CompletedTask;
+    }
+    
+    public Task IncreaseQuantity(int id)
+    {
+        var product = _products.FirstOrDefault(p => p.Id == id);
+        if (product != null && product.quantity >= 0)
+        {
+            product.quantity++;
         }
         return Task.CompletedTask;
     }
