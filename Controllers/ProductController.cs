@@ -36,6 +36,19 @@ namespace bellossomIT.Controllers
             await _service.AddAsync(flower);
             return RedirectToAction("Flower");
         }
+        [HttpGet]
+        public IActionResult AddFertilizer()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> AddFertilizer(FertilizerModel fertilizer)
+        {
+
+            await _service.AddAsync(fertilizer);
+            return RedirectToAction("Fertilizer");
+        }
         
         public async Task<IActionResult> Fertilizer(string category)
         {
